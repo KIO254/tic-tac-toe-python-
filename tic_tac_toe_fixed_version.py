@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
 Copied from github on Thu Dec 28 01:44:59 2023
-edited and resubmitted Fri Jan 5 22:00:33 2024
 
 @author: sunny4u from github
-@editor:KIO254
 """
+#@@ -1,16 +1,13 @@
+# tic tac toe
 #tic tac toe
 """
 [x]: draw a board
@@ -26,7 +26,7 @@ position you would desire to input your symbol.
 Player 1 will go first.
 """
 
-sign_dict = [[] for x in range(9)]
+sign_dict=[[' '] for i in range(9)]
 
 def print_start_board():
     board = f"""
@@ -48,8 +48,7 @@ def print_board(sign_dict):
     print(board,end='')
     print_start_board()
 
-index_list = [None] * 9
-
+index_list=[None]*9
 
 def take_input(player_name):
     """checks whether number is already inserted"""
@@ -89,37 +88,35 @@ def result_calculation(player_one, player_two):
             print("This is a tie!!! Nobody won. Please play again.")
             return False
     
-def main():
-    c=0
-    print("Welcome to James' tic tac toe game!")
-    player_one = input("Enter player 1 name:")
-    player_two = input("Enter player 2 name:")
-    print(f"Thank you for joining Mr./Mrs. {player_one} and Mr./Mrs. {player_two}.")
-    print(instructions)
-    print(f"{player_one}'s sign is: X")
-    print(f"{player_two}'s sign is: O")
-    while c==0:
-        c=1
-        input("Enter any key to start the game: ")
-        print_start_board()
-        for i in range(0, 9):
-            if i % 2 == 0:
-                index = take_input(player_one)
-                sign_dict[index][0] = 'X'
-            else:
-                index = take_input(player_two)
-                sign_dict[index][0] = 'O'
-            print_board(sign_dict)
-            result_calculation(player_one, player_two)
-        print('The game has ended as a tie.')
-        choice=int(input('Do you want to play again:\n\t1.Yes\n\t2.No\n'))
-        if choice==1:
-            index_list=[None] * 9
-            c=0
+c=0
+print("Welcome to James' tic tac toe game!")
+player_one = input("Enter player 1 name:")
+player_two = input("Enter player 2 name:")
+print(f"Thank you for joining Mr./Mrs. {player_one} and Mr./Mrs. {player_two}.")
+print(instructions)
+print(f"{player_one}'s sign is: X")
+print(f"{player_two}'s sign is: O")
+while c==0:
+    c=1
+    input("Enter any key to start the game: ")
+    print_start_board()
+    for i in range(0, 9):
+        if i % 2 == 0:
+            index = take_input(player_one)
+            sign_dict[index][0] = 'X'
         else:
-            print('Thank you both for playing!')
- 
-main()
+            index = take_input(player_two)
+            sign_dict[index][0] = 'O'
+        print_board(sign_dict)
+        result_calculation(player_one, player_two)
+    print('The game has ended as a tie.')
+    sign_dict=[[' '] for i in range(9)]
+    choice=int(input('Do you want to play again:\n\t1.Yes\n\t2.No\n'))
+    if choice==1:
+        index_list=[None]* 9
+        c=0
+    else:
+        print('Thank you both for playing!')
 
 """
 This is my original result_calculation function.It is not executed.
