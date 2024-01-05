@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
 Copied from github on Thu Dec 28 01:44:59 2023
+edited and resubmitted Fri Jan 5 22:00:33 2024
 
 @author: sunny4u from github
+@editor:KIO254
 """
-#@@ -1,16 +1,13 @@
-# tic tac toe
 #tic tac toe
 """
 [x]: draw a board
